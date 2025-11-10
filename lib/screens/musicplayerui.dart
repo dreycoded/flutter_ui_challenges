@@ -11,12 +11,26 @@ class Musicplayerui extends StatelessWidget {
         decoration: const BoxDecoration(
           gradient: LinearGradient(
             colors: [
-              Color(0xFF1DB954), //Spotify green
+              Color(0xFF9F4897), //Spotify Pink
               Color(0xFF191414), //Deep dark base
             ],
             begin: Alignment.topLeft,
             end: Alignment.bottomRight,
             ),
+        ),
+        child: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Container(
+                color: Colors.black,
+                padding: EdgeInsets.all(20.0),
+              ),
+              Padding(
+                padding: EdgeInsets.all(20.0)),
+              
+            ],
+          ),
         ),
       ),
     );
