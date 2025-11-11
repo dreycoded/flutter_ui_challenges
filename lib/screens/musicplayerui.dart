@@ -19,17 +19,36 @@ class Musicplayerui extends StatelessWidget {
             ),
         ),
         child: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Container(
-                color: Colors.black,
-                padding: EdgeInsets.all(20.0),
-              ),
-              Padding(
-                padding: EdgeInsets.all(20.0)),
-              
-            ],
+          child: Card(
+            color: Color(0xFF2a2c31),
+            elevation: 10.0,
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(20.0),
+            ),
+            child: Padding(
+              padding: EdgeInsets.all(24),
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  Container(
+                    height: 120.0,
+                    width: 120.0,
+                    decoration: BoxDecoration(
+                      color: Colors.green.shade400,
+                      borderRadius: BorderRadius.circular(20),),
+                    ),
+                  SizedBox(
+                    height: 20.0,
+                  ),
+                  Text(
+                    'Song Title',
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 22,
+                      color: Colors.white,
+                    ),),
+                ],
+              ),),
           ),
         ),
       ),

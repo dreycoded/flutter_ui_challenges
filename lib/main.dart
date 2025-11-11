@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_ui_challenges/screens/musicplayerui.dart';
-import 'package:flutter_ui_challenges/screens/profilecard.dart';
 
 void main() {
   runApp(const MyApp());
