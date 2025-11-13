@@ -47,8 +47,45 @@ class Musicplayerui extends StatelessWidget {
                       fontSize: 22,
                       color: Colors.white,
                     ),),
+                    SizedBox(
+                    height: 10.0,
+                  ), 
+                   Text(
+                    'Artist Name',
+                    style: TextStyle(
+                     color: const Color.fromARGB(255, 134, 125, 125),
+                    ),),
+                     SizedBox(
+                    height: 20.0,
+                  ),
+                  Row(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      Icon(Icons.fast_rewind, color: Colors.white54),
+                       SizedBox(
+                    width: 5.0,
+                  ),
+                      Icon(Icons.skip_previous, color: Colors.white54),
+                      SizedBox(
+                    width: 5.0,
+                  ),
+                      CircleAvatar(
+                        backgroundColor: Colors.white,
+                        radius: 25,
+                        child:  Icon(Icons.play_arrow, color: Colors.black),
+                      ),
+                      SizedBox(
+                    width: 5.0,
+                  ),
+                      Icon(Icons.fast_forward, color: Colors.white54),
+                      SizedBox(
+                    width: 5.0,
+                  ),
+                      Icon(Icons.skip_next, color: Colors.white54),
+                    ],
+                  ),
                 ],
-              ),),
+              ),),  
           ),
         ),
       ),
