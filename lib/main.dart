@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_ui_challenges/screens/loginui.dart';
-import 'package:flutter_ui_challenges/screens/musicplayerui.dart';
-import 'package:flutter_ui_challenges/screens/test.dart';
+import 'package:flutter_ui_challenges/screens/weatherinfoui.dart';
 
 void main() {
   runApp(const MyApp());
@@ -14,7 +12,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: Loginui(),
+      home: Weatherinfoui(),
     );
   }
 }

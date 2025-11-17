@@ -20,8 +20,7 @@ class Musicplayerui extends StatelessWidget {
         ),
         child: Center(
           child: Card(
-            color: Color(0xFF2a2c31),
-            elevation: 10.0,
+            color: Color(0xFF2a2c31), 
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(20.0),
             ),
@@ -37,6 +36,8 @@ class Musicplayerui extends StatelessWidget {
                       color: Colors.green.shade400,
                       borderRadius: BorderRadius.circular(20),),
                     ),
+
+                    //Album tile
                   SizedBox(
                     height: 20.0,
                   ),
@@ -50,6 +51,8 @@ class Musicplayerui extends StatelessWidget {
                     SizedBox(
                     height: 10.0,
                   ), 
+
+                  // Artist Name 
                    Text(
                     'Artist Name',
                     style: TextStyle(

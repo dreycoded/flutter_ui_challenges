@@ -1,178 +1,120 @@
 import 'package:flutter/material.dart';
 
+void main() {
+  runApp(const Test());
+}
+
 class Test extends StatelessWidget {
   const Test({super.key});
 
   @override
   Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Fuel Voucher Generator',
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+      ),
+      home: const VoucherHomePage(),
+    );
+  }
+}
+
+class VoucherHomePage extends StatefulWidget {
+  const VoucherHomePage({super.key});
+
+  @override
+  State<VoucherHomePage> createState() => _VoucherHomePageState();
+}
+
+class _VoucherHomePageState extends State<VoucherHomePage> {
+  // This will store our starting voucher number
+  int startingNumber = 12582;
+
+  @override
+  Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
-      body: Center(
-        child: SingleChildScrollView(
-          child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 40.0),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                const Text(
-                  'Login',
-                  style: TextStyle(
-                    fontSize: 48,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.black87,
-                  ),
-                ),
-                const SizedBox(height: 60),
-                
-                // Email TextField
-                TextField(
-                  decoration: InputDecoration(
-                    hintText: 'Email',
-                    hintStyle: TextStyle(
-                      color: Colors.grey[600],
-                      fontSize: 16,
-                    ),
-                    filled: true,
-                    fillColor: Colors.grey[50],
-                    contentPadding: const EdgeInsets.symmetric(
-                      horizontal: 20,
-                      vertical: 20,
-                    ),
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(12),
-                      borderSide: BorderSide(
-                        color: Colors.grey[300]!,
-                        width: 1.5,
-                      ),
-                    ),
-                    enabledBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(12),
-                      borderSide: BorderSide(
-                        color: Colors.grey[300]!,
-                        width: 1.5,
-                      ),
-                    ),
-                    focusedBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(12),
-                      borderSide: const BorderSide(
-                        color: Colors.blue,
-                        width: 2,
-                      ),
-                    ),
-                  ),
-                ),
-                const SizedBox(height: 20),
-                
-                // Password TextField
-                TextField(
-                  obscureText: true,
-                  decoration: InputDecoration(
-                    hintText: 'Password',
-                    hintStyle: TextStyle(
-                      color: Colors.grey[600],
-                      fontSize: 16,
-                    ),
-                    filled: true,
-                    fillColor: Colors.grey[50],
-                    contentPadding: const EdgeInsets.symmetric(
-                      horizontal: 20,
-                      vertical: 20,
-                    ),
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(12),
-                      borderSide: BorderSide(
-                        color: Colors.grey[300]!,
-                        width: 1.5,
-                      ),
-                    ),
-                    enabledBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(12),
-                      borderSide: BorderSide(
-                        color: Colors.grey[300]!,
-                        width: 1.5,
-                      ),
-                    ),
-                    focusedBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(12),
-                      borderSide: const BorderSide(
-                        color: Colors.blue,
-                        width: 2,
-                      ),
-                    ),
-                  ),
-                ),
-                const SizedBox(height: 30),
-                
-                // Login Button
-                SizedBox(
-                  width: double.infinity,
-                  height: 56,
-                  child: ElevatedButton(
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: const Color(0xFF4A90E2),
-                      foregroundColor: Colors.white,
-                      elevation: 0,
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(12),
-                      ),
-                    ),
-                    onPressed: () {},
-                    child: const Text(
-                      'Login',
-                      style: TextStyle(
-                        fontSize: 18,
-                        fontWeight: FontWeight.w600,
-                      ),
-                    ),
-                  ),
-                ),
-                const SizedBox(height: 20),
-                
-                // Forgot password
-                TextButton(
-                  onPressed: () {},
-                  child: Text(
-                    'Forgot password?',
-                    style: TextStyle(
-                      color: Colors.grey[600],
-                      fontSize: 15,
-                    ),
-                  ),
-                ),
-                const SizedBox(height: 40),
-                
-                // Sign up row
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Text(
-                      'Don\'t have an account? ',
-                      style: TextStyle(
-                        color: Colors.grey[700],
-                        fontSize: 15,
-                      ),
-                    ),
-                    TextButton(
-                      onPressed: () {},
-                      style: TextButton.styleFrom(
-                        padding: EdgeInsets.zero,
-                        minimumSize: const Size(0, 0),
-                        tapTargetSize: MaterialTapTargetSize.shrinkWrap,
-                      ),
-                      child: const Text(
-                        'Sign up',
-                        style: TextStyle(
-                          color: Color(0xFF4A90E2),
-                          fontSize: 15,
-                          fontWeight: FontWeight.w600,
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
-              ],
+      appBar: AppBar(
+        title: const Text('Fuel Voucher Generator'),
+      ),
+      body: Padding(
+        padding: const EdgeInsets.all(20.0),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            // Title
+            const Text(
+              'Generate Fuel Vouchers',
+              style: TextStyle(
+                fontSize: 24,
+                fontWeight: FontWeight.bold,
+              ),
+              textAlign: TextAlign.center,
             ),
-          ),
+            
+            const SizedBox(height: 40),
+            
+            // Input field for starting voucher number
+            TextField(
+              decoration: const InputDecoration(
+                labelText: 'Starting Voucher Number',
+                border: OutlineInputBorder(),
+                hintText: 'e.g., 12582',
+              ),
+              keyboardType: TextInputType.number,
+              onChanged: (value) {
+                // Update the starting number when user types
+                if (value.isNotEmpty) {
+                  startingNumber = int.tryParse(value) ?? 12582;
+                }
+              },
+            ),
+            
+            const SizedBox(height: 20),
+            
+            // Display info about what will be generated
+            Container(
+              padding: const EdgeInsets.all(16),
+              decoration: BoxDecoration(
+                color: Colors.blue.shade50,
+                borderRadius: BorderRadius.circular(8),
+              ),
+              child: Column(
+                children: [
+                  const Text(
+                    'This will generate:',
+                    style: TextStyle(fontWeight: FontWeight.bold),
+                  ),
+                  const SizedBox(height: 8),
+                  Text('• 50 vouchers'),
+                  Text('• Starting from FUA$startingNumber'),
+                  Text('• Ending at FUA${startingNumber + 49}'),
+                ],
+              ),
+            ),
+            
+            const SizedBox(height: 40),
+            
+            // Generate button
+            ElevatedButton(
+              onPressed: () {
+                // For now, just show a message
+                ScaffoldMessenger.of(context).showSnackBar(
+                  SnackBar(
+                    content: Text('Generating vouchers FUA$startingNumber to FUA${startingNumber + 49}'),
+                    duration: const Duration(seconds: 2),
+                  ),
+                );
+              },
+              style: ElevatedButton.styleFrom(
+                padding: const EdgeInsets.all(16),
+              ),
+              child: const Text(
+                'Generate PDF',
+                style: TextStyle(fontSize: 18),
+              ),
+            ),
+          ],
         ),
       ),
     );
