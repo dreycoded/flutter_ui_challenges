@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_ui_challenges/screens/recipecard.dart';
 import 'package:flutter_ui_challenges/screens/weatherinfoui.dart';
 
 void main() {
@@ -12,7 +13,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: Weatherinfoui(),
+      home: Recipecard(),
     );
   }
 }
