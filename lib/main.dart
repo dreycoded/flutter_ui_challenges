@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_ui_challenges/screens/recipecard.dart';
-import 'package:flutter_ui_challenges/screens/weatherinfoui.dart';
 
 void main() {
   runApp(const MyApp());

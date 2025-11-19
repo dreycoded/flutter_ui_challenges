@@ -16,30 +16,40 @@ class Recipecard extends StatelessWidget {
           ),
           child: IntrinsicWidth(
             child: Padding(
-              padding: const EdgeInsets.all(40.0),
+              padding: const EdgeInsets.all(24.0),
               child: Row(
                 mainAxisSize: MainAxisSize.min,
                 children: [
                   //Meal Icon
-                  Image.asset('assets/images.jpg'),
+                  ClipRRect(
+                    borderRadius: BorderRadius.circular(12),
+                    child: Image.asset('assets/images.jpg',
+                    width: 140,
+                    height: 140,
+                    fit: BoxFit.cover,
+                    ),
+                    ),
                   SizedBox(
-                    width: 30.0,
+                    width: 24,
                   ),
                   Expanded(
                     child: Column(
+                      mainAxisSize: MainAxisSize.min,
+                      crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         //Meal Text
                         SizedBox(
                           child: Text('Homemade Lasagna',
                           style: TextStyle(
-                            fontSize: 20,
+                            fontSize: 28,
                             fontWeight: FontWeight.bold,
+                            color: Colors.black87,
                           ),
                           ), 
                         ),
                                 
                         SizedBox(
-                          height: 10.0,
+                          height: 8.0,
                         ),
                                 
                         //Ratings
@@ -47,54 +57,83 @@ class Recipecard extends StatelessWidget {
                           mainAxisSize: MainAxisSize.min,
                           children: [
                             Icon(Icons.star,
-                            color: Colors.yellow),
+                            color: Colors.amber),
                             Icon(Icons.star,
-                            color: Colors.yellow),
+                            color: Colors.amber),
                             Icon(Icons.star,
-                            color: Colors.yellow),
+                            color: Colors.amber),
                             Icon(Icons.star,
-                            color: Colors.yellow),
+                            color: Colors.amber),
                             Icon(Icons.star,
-                            color: Colors.yellow),
+                            color: Colors.amber),
                                 
                             SizedBox(
-                              width: 10,
+                              width: 8,
                             ),
                                 
-                            Text('(348)'),
+                            Text('(348)',
+                            style: TextStyle(
+                              fontSize: 18,
+                              color: Colors.grey[600],
+                            ),),
                           ],
                         ),
                                 
                         SizedBox(
-                          height: 20,
+                          height: 16,
                         ),
                                 
                         Row(
+                          mainAxisSize: MainAxisSize.min,
                           children: [
-                            Icon(Icons.timer),
-                                
-                            SizedBox(
-                              width: 10.0,
+                            Icon(Icons.access_time,
+                            size: 22,
+                            color: Colors.grey[700],
                             ),
                                 
-                            Text('1h 20min'),
                             SizedBox(
-                              width: 10.0,
+                              width: 6,
+                            ),
+                                
+                            Text('1h 20min',
+                            style: TextStyle(
+                              fontSize: 16,
+                              color: Colors.grey[700],
+                            ),
+                            ),
+                            SizedBox(
+                              width: 20.0,
                             ),
                         
-                            Icon(Icons.restaurant),
+                            Icon(Icons.restaurant,
+                            size: 22,
+                            color: Colors.grey[700],
+                            ),
                                 
                             SizedBox(
                               width: 10.0,
                             ),
                                 
-                            Text('Easy'),
-                                
-                            SizedBox(
-                              width: 10.0,
+                            Text('Easy',
+                            style: TextStyle(
+                              fontSize: 16,
+                              color: Colors.grey[700]
+                            ),
                             ),
                                 
-                            Icon(Icons.favorite),
+                            SizedBox(
+                              width: 20.0,
+                            ),
+                                
+                            Container(
+                              padding: EdgeInsets.all(8),
+                              decoration: BoxDecoration(
+                                color: Colors.grey[200],
+                                shape: BoxShape.circle,
+                              ),
+                              child: Icon(Icons.favorite_border,
+                              size: 22,
+                              color: Colors.grey[600],)),
                             
                           ],
                         ),
